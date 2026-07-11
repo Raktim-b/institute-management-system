@@ -434,7 +434,7 @@ Import it into Postman to test all APIs.
 
 # 👨‍💻 Author
 
-**Srinu**
+**Raktim Bhattacharya**
 
 Backend Developer
 
