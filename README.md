@@ -441,3 +441,6 @@ Import it into Postman to test all APIs.
 Backend Developer
 
 Built with ❤️ using **Node.js, Express.js & MongoDB**
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:3B82F6&height=120&section=footer"/>
+</p>
