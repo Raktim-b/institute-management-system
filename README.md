@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:06B6D4&height=220&section=header&text=🎓%20Institute%20Management%20System%20API&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=40"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:06B6D4&height=220&section=header&text=%20Institute%20Management%20System%20API&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=40"/>
 </p>
 
 > A complete **Institute Management System Backend API** built with **Node.js, Express.js, MongoDB, Mongoose, JWT, and Nodemailer** that helps educational institutes manage students, teachers, courses, batches, enrollments, attendance, examinations, and reports through secure role-based access.
