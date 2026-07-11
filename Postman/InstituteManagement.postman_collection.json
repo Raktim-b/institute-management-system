@@ -1,0 +1,1281 @@
+{
+  "info": {
+    "_postman_id": "17f07bb4-aa60-47c8-a329-402e33b1c961",
+    "name": "InstituteManagement",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52310874",
+    "_collection_link": "https://go.postman.co/collection/52310874-17f07bb4-aa60-47c8-a329-402e33b1c961?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "http://localhost:4033/auth/role/create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_10bn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\": \"student\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/create/role",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "create",
+                "role"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/auth/admin/create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_10bn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\": \"teacher\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/create/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "create",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/auth/create/student",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Jo\",\r\n  \"email\": \"john@yopmail.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/create/student",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "create",
+                "student"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/auth/create/teacher",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Lucas\",\r\n  \"email\": \"lucas@yopmail.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/create/teacher",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "create",
+                "teacher"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/auth/login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/auth/refresh-token",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "refresh-token",
+                "value": "{{supabase_service_role_api_key_0qo0}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"lucas@yopmail.com\",\r\n    \"password\": \"Password@123\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/auth/refresh-token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "http://localhost:4033/user/profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0bo8}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"lucas@yopmail.com\",\r\n    \"password\": \"Password@123\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/user/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "user",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/user/update",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_0v00}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "4650f6dc-3feb-4794-a21c-f45825fc8a68",
+                  "src": "/C:/Users/rakti/Downloads/images (2).jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:4033/user/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "user",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/user/get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_17vv}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "4650f6dc-3feb-4794-a21c-f45825fc8a68",
+                  "src": "/C:/Users/rakti/Downloads/images (2).jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:4033/user/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "user",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Course",
+      "item": [
+        {
+          "name": "http://localhost:4033/course/create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_1b5a}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"courseName\": \"Node Js Development\",\r\n  \"description\": \"Master the Node Js including MongoDB, Express.js with hands-on applications.\",\r\n  \"duration\": \"5 Months\",\r\n  \"fees\": 35000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/course/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "course",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/course/get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_0ozr}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"courseName\": \"Node Js Development\",\r\n  \"description\": \"Master the Node Js including MongoDB, Express.js with hands-on applications.\",\r\n  \"duration\": \"5 Months\",\r\n  \"fees\": 35000\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/course/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "course",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/course/get/6a4a08acdb2bb4e28e53bb1a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_09ls}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"courseName\": \"Node Js Development\",\r\n  \"description\": \"Master the Node Js including MongoDB, Express.js with hands-on applications.\",\r\n  \"duration\": \"5 Months\",\r\n  \"fees\": 35000\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/course/get/6a4a08acdb2bb4e28e53bb1a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "course",
+                "get",
+                "6a4a08acdb2bb4e28e53bb1a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/course/update/6a4a08acdb2bb4e28e53bb1a",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_1cox}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fees\": 40000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/course/update/6a4a08acdb2bb4e28e53bb1a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "course",
+                "update",
+                "6a4a08acdb2bb4e28e53bb1a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/course/enroll",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0rxn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"studentId\": \"6a4e96ad17b7f422bfbea995\",\r\n    \"courseId\": \"6a4a0a5ddb2bb4e28e53bb21\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/course/enroll",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "course",
+                "enroll"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Batch",
+      "item": [
+        {
+          "name": "http://localhost:4033/batch/create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_0i8h}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"batchName\": \"Node.js Weekend Batch\",\r\n  \"courseId\": \"6a4a0b6cdb2bb4e28e53bb22\",\r\n  \"teacherId\": \"6a478b7d7bc64638fae64595\",\r\n  \"startDate\": \"2026-10-05\",\r\n  \"endDate\": \"2027-03-05\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/batch/assign/6a4bd12e1d79276efa978909",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_13r6}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"students\": [\r\n    \"6a478abe7bc64638fae6458f\",\r\n    \"6a478aec7bc64638fae64591\",\r\n    \"6a478b0c7bc64638fae64593\"\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/assign/6a4bd12e1d79276efa978909",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "assign",
+                "6a4bd12e1d79276efa978909"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/batch/get/6a4a08acdb2bb4e28e53bb1a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0u99}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"students\": [\r\n    \"6a478abe7bc64638fae6458f\",\r\n    \"6a478aec7bc64638fae64591\",\r\n    \"6a478b0c7bc64638fae64593\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/get/6a4a08acdb2bb4e28e53bb1a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "get",
+                "6a4a08acdb2bb4e28e53bb1a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/batch/update/6a4bd753f663e9a950f8a952",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0zko}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"startDate\": \"2026-10-10\",\r\n    \"endDate\": \"2027-03-05\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/update/6a4bd753f663e9a950f8a952",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "update",
+                "6a4bd753f663e9a950f8a952"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/batch/my-batch",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0wfr}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"studentId\": \"6a4e96ad17b7f422bfbea995\",\r\n    \"courseId\": \"6a4a0a5ddb2bb4e28e53bb21\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/my-batch",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "my-batch"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/batch/get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_05eh}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:4033/batch/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "batch",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attendence",
+      "item": [
+        {
+          "name": "http://localhost:4033/attendence/get",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_1egc}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4033/attendence/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "attendence",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/attendence/mark",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0g81}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"batchId\": \"6a4bd1361d79276efa97890a\",\r\n  \"date\": \"2026-08-05\",\r\n  \"attendance\": [\r\n    { \"studentId\": \"6a478abe7bc64638fae6458f\", \"status\": \"present\" },\r\n    { \"studentId\": \"6a4e93c217b7f422bfbea96f\", \"status\": \"present\" },\r\n    { \"studentId\": \"6a4e951417b7f422bfbea97f\", \"status\": \"present\" },\r\n    { \"studentId\": \"6a4e964017b7f422bfbea98f\", \"status\": \"absent\" }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/attendence/mark",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "attendence",
+                "mark"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/attendence/get/6a4bd11c1d79276efa978907",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_1cps}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/attendence/get/6a4bd11c1d79276efa978907",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "attendence",
+                "get",
+                "6a4bd11c1d79276efa978907"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Exam",
+      "item": [
+        {
+          "name": "http://localhost:4033/exam/create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0p2i}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"batchId\": \"6a4bd744f663e9a950f8a951\",\r\n  \"examName\": \"AWS EC2 & S3 Test\",\r\n  \"examDate\": \"2026-11-01\",\r\n  \"duration\": 120,\r\n  \"totalMarks\": 100\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/exam/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "exam",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/exam/marks",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0qyn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"examId\": \"6a4fd25520e3a9a8abf1983b\",\r\n  \"marks\": [\r\n    {\r\n      \"studentId\": \"6a478b0c7bc64638fae64593\",\r\n      \"obtainedMarks\": 93\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e93f017b7f422bfbea973\",\r\n      \"obtainedMarks\": 90\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e955f17b7f422bfbea983\",\r\n      \"obtainedMarks\": 82\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e969917b7f422bfbea993\",\r\n      \"obtainedMarks\": 87\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4033/exam/marks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "exam",
+                "marks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/exam/get/6a478b0c7bc64638fae64593",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0zb5}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"examId\": \"6a4fd25520e3a9a8abf1983b\",\r\n  \"marks\": [\r\n    {\r\n      \"studentId\": \"6a478b0c7bc64638fae64593\",\r\n      \"obtainedMarks\": 93\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e93f017b7f422bfbea973\",\r\n      \"obtainedMarks\": 90\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e955f17b7f422bfbea983\",\r\n      \"obtainedMarks\": 82\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e969917b7f422bfbea993\",\r\n      \"obtainedMarks\": 87\r\n    }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/exam/get/6a478b0c7bc64638fae64593",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "exam",
+                "get",
+                "6a478b0c7bc64638fae64593"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/exam/get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_12gf}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"examId\": \"6a4fd25520e3a9a8abf1983b\",\r\n  \"marks\": [\r\n    {\r\n      \"studentId\": \"6a478b0c7bc64638fae64593\",\r\n      \"obtainedMarks\": 93\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e93f017b7f422bfbea973\",\r\n      \"obtainedMarks\": 90\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e955f17b7f422bfbea983\",\r\n      \"obtainedMarks\": 82\r\n    },\r\n    {\r\n      \"studentId\": \"6a4e969917b7f422bfbea993\",\r\n      \"obtainedMarks\": 87\r\n    }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/exam/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "exam",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Report",
+      "item": [
+        {
+          "name": "http://localhost:4033/report/list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_0w4k}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productName\": \"OnePlus 13\",\r\n  \"categoryId\": \"6a50ba220eb173184e8d4647\",\r\n  \"subCategoryId\": \"6a50bff45c95f88b4ed7a9a6\",\r\n  \"price\": 69999,\r\n  \"description\": \"Flagship Android smartphone with fast charging.\",\r\n  \"stock\": 30\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/report/list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "report",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/report/batch/6a4bd12e1d79276efa978909",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_1dc9}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productName\": \"OnePlus 13\",\r\n  \"categoryId\": \"6a50ba220eb173184e8d4647\",\r\n  \"subCategoryId\": \"6a50bff45c95f88b4ed7a9a6\",\r\n  \"price\": 69999,\r\n  \"description\": \"Flagship Android smartphone with fast charging.\",\r\n  \"stock\": 30\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4033/report/batch/6a4bd12e1d79276efa978909",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "report",
+                "batch",
+                "6a4bd12e1d79276efa978909"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/report/student",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{json_web_token_0k3a}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4033/report/student",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "report",
+                "student"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:4033/report/student/6a478a577bc64638fae6458b",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{supabase_service_role_api_key_11pw}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4033/report/student/6a478a577bc64638fae6458b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4033",
+              "path": [
+                "report",
+                "student",
+                "6a478a577bc64638fae6458b"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0jls",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0v00",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_17vv",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0qo0",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0bo8",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_1b5a",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0ozr",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_09ls",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1cox",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_12sj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0i8h",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_13r6",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0u99",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0zko",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0rxn",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0wfr",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_05eh",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_1egc",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0g81",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1cps",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0p2i",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0qyn",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0zb5",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_12gf",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0w4k",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1dc9",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0k3a",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_01ix",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_11pw",
+      "secret": true
+    }
+  ]
+}

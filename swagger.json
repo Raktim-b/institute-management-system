@@ -1,0 +1,59 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Ticket Booking System API",
+      "version": "1.0.0",
+      "description": "Movie Ticket Booking System API documentation created using Swagger",
+      "contact": {
+        "name": "Raktim Bhattacharya"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:4031"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Authentication",
+        "description": "User Authentication APIs"
+      },
+      {
+        "name": "User",
+        "description": "User Management APIs"
+      },
+      {
+        "name": "Movie",
+        "description": "Movie Management APIs"
+      },
+      {
+        "name": "Theater",
+        "description": "Theater Management APIs"
+      },
+      {
+        "name": "Booking",
+        "description": "Booking Management APIs"
+      },
+      {
+        "name": "Report",
+        "description": "Report APIs"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ]
+  },
+  "apis": ["./app.js", "./app/routes/*.js"]
+}
